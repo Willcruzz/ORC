@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORC APP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ORC APP</h1>
+    <form id="ocrForm">
+      <label for="fileInput" class="custom-file-label">Selecionar os Arquivos para OCR</label>
+      <input type="file" id="fileInput" class="custom-file-input" multiple accept="image/*,application/pdf" />
+      <div id="output"></div>
+      <div class="file-names" id="fileNames"></div>
+      <button type="button" id="processButton">Extrair Texto </button>
+
+    <div id="result">
+      <textarea id="results" readonly placeholder="Os textos extraídos aparecerão aqui..."></textarea>
+    
+    </div>
+   
+    </form>
+  </div>
+  <div class="container">
+    <h1>Integração com Claude AI</h1>
+    <textarea id="inputText" placeholder="Digite o texto para processar..." rows="5" cols="50"></textarea>
+    <button id="sendButton">Enviar para Claude</button>
+    <button id="generateXmlButton" style="display:none;">Gerar XML</button>
+    <div id="output">
+      <h3>Texto Gerado:</h3>
+      <textarea id="resultText" rows="10" cols="50" readonly></textarea>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
